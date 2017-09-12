@@ -25,33 +25,18 @@ console.log('virgi is here');
 // --! pseudo code for what needs to be completed !-- //
 
 
-// Main wrapper for Drawing table 
-var MainTableWrapper = document.createElement('div');
-		MainTableWrapper.setAttribute('id', 'MainTableWrapper');
-var getParent = document.getElementById('pixelPainter');
-var getChild = getParent.appendChild(MainTableWrapper);
 
-
-// Main Color div for color table 
-
-var MainColorTableWrapper = document.createElement('div');
-		MainColorTableWrapper.setAttribute('id', 'MainColorTableWrapper');
-var colorParent = document.getElementById('pixelPainter');
-var colorChild = colorParent.appendChild(MainColorTableWrapper);
-		
-
-
-
-// var ColorTableWrapper = document.createElement('div');
 // step one - Create the grid
-function drawGrid(width, height){
+function drawGrid(width, height, attributename, attribute){
+	var MainTableWrapper = document.createElement('div');
+	var parent = document.getElementById('pixelPainter');
+	parent.appendChild(MainTableWrapper);
 
-for(var i = 1; i< height; i++){
-	var newTableCol = document.createElement('div');
-	newTableCol.setAttribute('data', i );
-	newTableCol.setAttribute('class', 'newTableCol');
-	var newParent = document.getElementById('MainTableWrapper');
-  var child = newParent.appendChild(newTableCol);
+	for(var i = 1; i< height; i++){
+		var newTableCol = document.createElement('div');
+		newTableCol.setAttribute('data', i );
+		newTableCol.setAttribute(attributename, attribute);
+		MainTableWrapper.appendChild(newTableCol);
 
 		 for(var j = 1; j < width; j++){
 		 	var newTableRow = document.createElement('div');
@@ -62,38 +47,14 @@ for(var i = 1; i< height; i++){
 	  }
 }
 
-  return newTableCol;
+  return MainTableWrapper;
 
 }
 
-drawGrid(10,10);
-
+drawGrid(10,10, 'class', 'tableCol');
 
 // step 2 - create the color grid (without color)
-
-
-function drawColorGrid(width, height){
-
-for(var i = 1; i< height; i++){
-	var colorTableCol = document.createElement('div');
-	colorTableCol.setAttribute('data', i );
-	colorTableCol.setAttribute('class', 'colorTableCol');
- 	MainColorTableWrapper.appendChild(colorTableCol);
-
-		 for(var j = 1; j < width; j++){
-		 	var colorTableRow = document.createElement('div');
-	 		colorTableRow.setAttribute('data', j);
-	 		colorTableRow.setAttribute('class', 'colorTableRow');
-	 		MainColorTableWrapper.appendChild(colorTableRow);
-
-	  }
-}
-
-  return colorTableCol;
-
-}
-
-drawColorGrid(3,3);
+drawGrid(3,3, 'class', 'colorTable');
 
 
 // step 3 - make Erase and Clear buttins
