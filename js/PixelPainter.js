@@ -26,11 +26,10 @@ console.log('virgi is here');
 
 
 
-// step one - Create the grid
+// step one - Create the grid --- Can bind click function built into for loop
 function drawGrid(width, height, attributename, attribute){
 	var MainTableWrapper = document.createElement('div');
-	var parent = document.getElementById('pixelPainter');
-	parent.appendChild(MainTableWrapper);
+	
 
 	for(var i = 1; i< height; i++){
 		var newTableCol = document.createElement('div');
@@ -51,11 +50,15 @@ function drawGrid(width, height, attributename, attribute){
 
 }
 
-drawGrid(10,10, 'class', 'tableCol');
+var newGrid = drawGrid(10,10, 'class', 'tableCol');
 
+var parent = document.getElementById('pixelPainter');
+		parent.appendChild(newGrid);
 // step 2 - create the color grid (without color)
-drawGrid(3,3, 'class', 'colorTable');
-
+	
+	var newColorGrid = drawGrid(3,3, 'class', 'colorTable');
+		var parent = document.getElementById('pixelPainter');
+			parent.appendChild(newColorGrid);
 
 // step 3 - make Erase and Clear buttins
 
@@ -64,8 +67,9 @@ drawGrid(3,3, 'class', 'colorTable');
 
 // step 4 - make main grid clickable
 
+// var clicker = function('click',function(){
 
-
+// };
 
 
 // step 5 - make color grid clickable
