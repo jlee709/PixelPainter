@@ -31,25 +31,26 @@ console.log('virgi is here');
 // step one - Create the grid 
 function drawGrid(width, height){
 
-for(var i = 0; i< height; i++){
+for(var i = 1; i< height; i++){
 	var newTableCol = document.createElement('div');
 	newTableCol.setAttribute('class', 'tableCol');
-
 	var newParent = document.getElementById('pixelPainter');
   var child = newParent.appendChild(newTableCol);
 
-  	var minTableCol = document.createElement('div');
-		minTableCol.setAttribute('class', 'miniTableCol');
-		
-		var miniChild = newTableCol.appendChild(minTableCol);
+  	//var minTableCol = document.createElement('div');
+		//minTableCol.setAttribute('class', 'miniTableCol');
+		//var miniChild = newTableCol.appendChild(minTableCol);
 
-		// for(var j = 0; j<width; j++){
-		// 	var newTableRow = document.createElement('div');
-	 // 		newTableRow.setAttribute('style', 'border: solid black 2px;');
-	 // 		var newParent = document.getElementById('pixelPainter');
-		//   var child = newParent.appendChild(newTableRow);
+		 for(var j = 1; j < width; j++){
+		 	var newTableRow = document.createElement('div');
+	 		newTableRow.setAttribute('class', 'tableRow');
+	 		 newTableCol.appendChild(newTableRow);
 
-	 // }
+		  //var minTableRow = document.createElement('div');
+			//minTableRow.setAttribute('class', 'miniTableRow');
+			//var miniChild = newTableRow.appendChild(minTableRow);
+
+	  }
 }
 
   return newTableCol;

@@ -1,5 +1,5 @@
 div.tableCol{
-	
+	display: inline-block;
 	height: 25px;
 	width: 25px;
 	border: solid black 2px;
@@ -11,4 +11,10 @@ div.miniTableCol{
 	width: 25px;
 	background-color: red;
 	border: red;
+}
+
+div.tableRow{
+	height: 25px;
+	width: 25px;
+	border: solid black 2px;
 }
