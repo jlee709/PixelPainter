@@ -1,0 +1,14 @@
+div.tableCol{
+	
+	height: 25px;
+	width: 25px;
+	border: solid black 2px;
+
+}
+
+div.miniTableCol{
+	float: left;
+	width: 25px;
+	background-color: red;
+	border: red;
+}

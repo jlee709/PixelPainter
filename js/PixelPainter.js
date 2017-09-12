@@ -33,11 +33,15 @@ function drawGrid(width, height){
 
 for(var i = 0; i< height; i++){
 	var newTableCol = document.createElement('div');
-	newTableCol.setAttribute('style', 'width: ');
-	newTableCol.innerHTML = 'style, border: solid black 2px;'
+	newTableCol.setAttribute('class', 'tableCol');
+
 	var newParent = document.getElementById('pixelPainter');
   var child = newParent.appendChild(newTableCol);
-	
+
+  	var minTableCol = document.createElement('div');
+		minTableCol.setAttribute('class', 'miniTableCol');
+		
+		var miniChild = newTableCol.appendChild(minTableCol);
 
 		// for(var j = 0; j<width; j++){
 		// 	var newTableRow = document.createElement('div');
