@@ -56,8 +56,30 @@ drawGrid(10,10);
 
 // step 2 - create the color grid (without color)
 
-function colorGrid()
 
+function drawColorGrid(width, height){
+
+for(var i = 1; i< height; i++){
+	var colorTableCol = document.createElement('div');
+	colorTableCol.setAttribute('data', i );
+	colorTableCol.setAttribute('class', 'colorTableCol');
+	var newParent = document.getElementById('pixelPainter');
+  var child = newParent.appendChild(colorTableCol);
+
+		 for(var j = 1; j < width; j++){
+		 	var colorTableRow = document.createElement('div');
+	 		colorTableRow.setAttribute('data', j);
+	 		colorTableRow.setAttribute('class', 'colorTableRow');
+	 		colorTableCol.appendChild(colorTableRow);
+
+	  }
+}
+
+  return colorTableCol;
+
+}
+
+drawColorGrid(3,3);
 
 
 // step 3 - make Erase and Clear buttins

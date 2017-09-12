@@ -12,3 +12,23 @@ div.newTableRow{
 	width: 25px;
 	border: solid black 2px;
 }
+
+
+
+
+div.colorTableCol{
+	display: inline-block;
+	height: 25px;
+	width: 25px;
+	border: solid black 2px;
+	
+
+}
+
+
+div.colorTableRow{
+	height: 25px;
+	width: 25px;
+	border: solid black 2px;
+	
+}
