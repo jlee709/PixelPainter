@@ -17,3 +17,50 @@ console.log('virgi is here');
 // Do not edit the index.html file. You will generate all 
 // of your html markup using the DOM API.
 
+
+
+
+
+
+// --! pseudo code for what needs to be completed !-- //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
