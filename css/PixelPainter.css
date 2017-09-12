@@ -1,3 +1,16 @@
+div #MainTableWrapper {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+}
+
+div #MainColorTableWrapper{
+	
+}
+
+
+
+
 div.newTableCol{
 	display: inline-block;
 	height: 25px;

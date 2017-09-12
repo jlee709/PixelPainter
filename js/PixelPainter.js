@@ -25,9 +25,24 @@ console.log('virgi is here');
 // --! pseudo code for what needs to be completed !-- //
 
 
+// Main wrapper for Drawing table 
+var MainTableWrapper = document.createElement('div');
+		MainTableWrapper.setAttribute('id', 'MainTableWrapper');
+var getParent = document.getElementById('pixelPainter');
+var getChild = getParent.appendChild(MainTableWrapper);
+
+
+// Main Color div for color table 
+
+var MainColorTableWrapper = document.createElement('div');
+		MainColorTableWrapper.setAttribute('id', 'MainColorTableWrapper');
+var colorParent = document.getElementById('pixelPainter');
+var colorChild = colorParent.appendChild(MainColorTableWrapper);
+		
 
 
 
+// var ColorTableWrapper = document.createElement('div');
 // step one - Create the grid
 function drawGrid(width, height){
 
@@ -35,7 +50,7 @@ for(var i = 1; i< height; i++){
 	var newTableCol = document.createElement('div');
 	newTableCol.setAttribute('data', i );
 	newTableCol.setAttribute('class', 'newTableCol');
-	var newParent = document.getElementById('pixelPainter');
+	var newParent = document.getElementById('MainTableWrapper');
   var child = newParent.appendChild(newTableCol);
 
 		 for(var j = 1; j < width; j++){
@@ -63,14 +78,13 @@ for(var i = 1; i< height; i++){
 	var colorTableCol = document.createElement('div');
 	colorTableCol.setAttribute('data', i );
 	colorTableCol.setAttribute('class', 'colorTableCol');
-	var newParent = document.getElementById('pixelPainter');
-  var child = newParent.appendChild(colorTableCol);
+ 	MainColorTableWrapper.appendChild(colorTableCol);
 
 		 for(var j = 1; j < width; j++){
 		 	var colorTableRow = document.createElement('div');
 	 		colorTableRow.setAttribute('data', j);
 	 		colorTableRow.setAttribute('class', 'colorTableRow');
-	 		colorTableCol.appendChild(colorTableRow);
+	 		MainColorTableWrapper.appendChild(colorTableRow);
 
 	  }
 }
