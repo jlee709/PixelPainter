@@ -1,20 +1,20 @@
-// Justin and Virgi checks for Git and contributors 
+// Justin and Virgi checks for Git and contributors
 console.log("im here");
 console.log('Justin Is here');
 console.log('virgi is here');
 
 // specs For Pixel Painter
 
-// When instatiated it appends a 
-// new PixelPainter object to a HTML div 
+// When instatiated it appends a
+// new PixelPainter object to a HTML div
 // element with an id of pp-canvas.
 // Module or Classical OOP Patterns for this.
 
 
-// The height and width attributes set the size of the canvas. 
-// must be a square 
+// The height and width attributes set the size of the canvas.
+// must be a square
 
-// Do not edit the index.html file. You will generate all 
+// Do not edit the index.html file. You will generate all
 // of your html markup using the DOM API.
 
 
@@ -28,7 +28,7 @@ console.log('virgi is here');
 
 
 
-// step one - Create the grid 
+// step one - Create the grid
 function drawGrid(width, height){
 
 for(var i = 1; i< height; i++){
@@ -37,27 +37,19 @@ for(var i = 1; i< height; i++){
 	var newParent = document.getElementById('pixelPainter');
   var child = newParent.appendChild(newTableCol);
 
-  	//var minTableCol = document.createElement('div');
-		//minTableCol.setAttribute('class', 'miniTableCol');
-		//var miniChild = newTableCol.appendChild(minTableCol);
-
 		 for(var j = 1; j < width; j++){
 		 	var newTableRow = document.createElement('div');
 	 		newTableRow.setAttribute('class', 'tableRow');
 	 		 newTableCol.appendChild(newTableRow);
 
-		  //var minTableRow = document.createElement('div');
-			//minTableRow.setAttribute('class', 'miniTableRow');
-			//var miniChild = newTableRow.appendChild(minTableRow);
-
 	  }
 }
 
   return newTableCol;
-  
+
 }
 
-console.log(drawGrid());
+drawGrid(10,10);
 
 
 // step 2 - create the color grid (without color)
@@ -66,37 +58,37 @@ console.log(drawGrid());
 
 
 
-// step 3 - make Erase and Clear buttins 
+// step 3 - make Erase and Clear buttins
 
 
 
 
-// step 4 - make main grid clickable 
-
-
-
-
-
-// step 5 - make color grid clickable 
+// step 4 - make main grid clickable
 
 
 
 
 
-// step 6 - add action fucntion to each grid Key 
+// step 5 - make color grid clickable
+
+
+
+
+
+// step 6 - add action fucntion to each grid Key
 
 
 
 
 
 
-// step 7 - action for erase button / clear grid 
+// step 7 - action for erase button / clear grid
 
 
 
 
 
-// step 8 - link colors to color grid 
+// step 8 - link colors to color grid
 
 
 
@@ -109,7 +101,7 @@ console.log(drawGrid());
 
 
 
-// step 10. link the color grid to mous click to write to the main grid 
+// step 10. link the color grid to mous click to write to the main grid
 
 
 
