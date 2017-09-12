@@ -33,14 +33,16 @@ function drawGrid(width, height){
 
 for(var i = 1; i< height; i++){
 	var newTableCol = document.createElement('div');
-	newTableCol.setAttribute('class', 'tableCol');
+	newTableCol.setAttribute('data', i );
+	newTableCol.setAttribute('class', 'newTableCol');
 	var newParent = document.getElementById('pixelPainter');
   var child = newParent.appendChild(newTableCol);
 
 		 for(var j = 1; j < width; j++){
 		 	var newTableRow = document.createElement('div');
-	 		newTableRow.setAttribute('class', 'tableRow');
-	 		 newTableCol.appendChild(newTableRow);
+	 		newTableRow.setAttribute('data', j);
+	 		newTableRow.setAttribute('class', 'newTableRow');
+	 		newTableCol.appendChild(newTableRow);
 
 	  }
 }
@@ -54,7 +56,7 @@ drawGrid(10,10);
 
 // step 2 - create the color grid (without color)
 
-
+function colorGrid()
 
 
 
