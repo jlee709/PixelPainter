@@ -32,31 +32,30 @@ console.log('virgi is here');
 function drawGrid(width, height){
 
 for(var i = 0; i< height; i++){
-	var newTableCol = document.createElement('tr');
-	newTableCol.innerHTML = '|';
+	var newTableCol = document.createElement('div');
+	newTableCol.setAttribute('style', 'width: ');
+	newTableCol.innerHTML = 'style, border: solid black 2px;'
 	var newParent = document.getElementById('pixelPainter');
   var child = newParent.appendChild(newTableCol);
 	
 
-		for(var j = 0; j<width; j++){
-		var newTableRow = document.createElement('tr');
-		newTableRow.innerHTML = '_';
-		var newParent = document.getElementById('pixelPainter');
-	  var child = newParent.appendChild(newTableRow);
+		// for(var j = 0; j<width; j++){
+		// 	var newTableRow = document.createElement('div');
+	 // 		newTableRow.setAttribute('style', 'border: solid black 2px;');
+	 // 		var newParent = document.getElementById('pixelPainter');
+		//   var child = newParent.appendChild(newTableRow);
 
-	}
+	 // }
 }
 
-
-
-  return child;
+  return newTableCol;
   
 }
 
 console.log(drawGrid());
 
 
-// step 2 - create the color grad (without color)
+// step 2 - create the color grid (without color)
 
 
 
