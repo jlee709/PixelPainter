@@ -29,8 +29,31 @@ console.log('virgi is here');
 
 
 // step one - Create the grid 
+function drawGrid(width, height){
 
+for(var i = 0; i< height; i++){
+	var newTableCol = document.createElement('tr');
+	newTableCol.innerHTML = '|';
+	var newParent = document.getElementById('pixelPainter');
+  var child = newParent.appendChild(newTableCol);
 	
+
+		for(var j = 0; j<width; j++){
+		var newTableRow = document.createElement('tr');
+		newTableRow.innerHTML = '_';
+		var newParent = document.getElementById('pixelPainter');
+	  var child = newParent.appendChild(newTableRow);
+
+	}
+}
+
+
+
+  return child;
+  
+}
+
+console.log(drawGrid());
 
 
 // step 2 - create the color grad (without color)
