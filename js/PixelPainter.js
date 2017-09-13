@@ -83,8 +83,8 @@ function addColors(){
 	for (var i = 0; i < color.length; i++) {
 		color[i].style.backgroundColor = colorArray[i];
 	}
-}	
-addColors(); 
+}
+addColors();
 
 // Handels selections color locale to but grabed and placed
 var colorTest = document.querySelectorAll('.tableCol');
@@ -99,7 +99,7 @@ for (var i = 0; i < palletes.length; i++) {
 }
 
 for (var i = 0; i < colorTest.length; i++) {
-	colorTest[i].addEventListener('click', function(event){
+	colorTest[i].addEventListener('mousemove', function(event){
 		this.style.backgroundColor = colorString;
 			});
 }
