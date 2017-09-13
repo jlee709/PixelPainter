@@ -38,7 +38,7 @@ function drawGrid(width, height, attributename, attribute){
 	}
 
 // Draw Main Gid
-var newGrid = drawGrid(10,10, 'class', 'tableCol');
+var newGrid = drawGrid(20,10, 'class', 'tableCol');
 
 var parent = document.getElementById('pixelPainter');
 		parent.appendChild(newGrid);
@@ -99,7 +99,7 @@ for (var i = 0; i < palletes.length; i++) {
 }
 
 for (var i = 0; i < colorTest.length; i++) {
-	colorTest[i].addEventListener('mousemove', function(event){
+	colorTest[i].addEventListener('mousedown', function(event){
 		this.style.backgroundColor = colorString;
 			});
 }
