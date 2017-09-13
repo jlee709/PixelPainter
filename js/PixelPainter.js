@@ -153,21 +153,38 @@ addColors();
 // step 10. link the color grid to mous click to write to the main grid
 //var currentColor = event.currentTarget.style.backgroundColor;
 
-function grabColors(){
-	for (var i = 0; i < color.length; i++) {
-		color[i].addEventListener('click', function(event){
+var colorT = document.querySelectorAll('.colorTable');
+var colorTest = document.querySelectorAll('.tableCol');
+var colorString;
+console.log(colorString, "colorString");
+
+	for (var i = 0; i < colorT.length; i++) {
+		colorT[i].addEventListener('click', function(event){
 			var currentColor = event.currentTarget.style.backgroundColor;
-			console.log(currentColor);
-			var thisElem = document.getElementsByClassName('tableCol');
-	 		thisElem.style.backgroundColor = currentColor;
-	//MainTableWrapper = currentColor;
-		}, true);
-	}
+			console.log(typeof currentColor);
 
-};
+			colorString.push(currentColor);
+			console.log(currentColor, "this" + [i]);
+console.log("outside", currentColor);
+
+		});
 
 
-grabColors();
+	for (var i = 0; i < colorTest.length; i++) {
+			colorTest[i].addEventListener('click', function(event){
+			console.log('tableCol')
+		this.style.backgroundColor = colorString;
+		});
+		}
+	};
+
+
+
+
+
+
+
+
 
 
 
