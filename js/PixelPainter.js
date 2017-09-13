@@ -38,7 +38,7 @@ function drawGrid(width, height, attributename, attribute){
 	}
 
 // Draw Main Gid
-var newGrid = drawGrid(20,10, 'class', 'tableCol');
+var newGrid = drawGrid(30,10, 'class', 'tableCol');
 
 var parent = document.getElementById('pixelPainter');
 		parent.appendChild(newGrid);

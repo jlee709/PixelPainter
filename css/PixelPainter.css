@@ -1,6 +1,7 @@
 h1 {
-	display: flex;
-	position: right;
+	display: inline-flex;
+	float: : right;
+	margin-right: 300px;
 }
 
 div.tableCol{
@@ -17,9 +18,9 @@ div.newTableRow{
 	border: solid black 2px;
 }
 
-div.colorTable{
+.colorTable{
 	float: left;
-	margin-top: 10px;
+	margin-top: 90px;
 	height: 25px;
 	width: 25px;
 	border: solid black 2px;
@@ -41,6 +42,7 @@ div.colorTable{
 
 #MainTableWrapper{
 	overflow: auto;
+	margin-top: 30px;
 	height: 270px;
 	margin: auto;
   width: 50%;
@@ -49,7 +51,9 @@ div.colorTable{
 }
 
 body {
-    background-image: url("http://wallpaper21.com/wp-content/uploads/2016/09/website-wallpaper2.jpg");
+    background-image: url(https://wallpapercave.com/wp/6Y8k3h9.jpg);
     background-color: #cccccc;
 }
+
+
 
