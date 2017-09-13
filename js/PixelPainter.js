@@ -75,15 +75,15 @@ erButtonDiv.appendChild(eraseButton);
 parent.appendChild(erButtonDiv);
 
 // ERASE BTN
-// eraseButton.addEventListener('click', function(event){
-// 	if(draw){
-// 	draw = false;
-// 	}else if(draw === false){
-// 		draw = true;
-// 	}
-// }, true);
+eraseButton.addEventListener('click', function(event){
+	if(draw){
+	draw = false;
+	}else if(draw === false){
+		draw = true;
+	}
+}, true);
 
-// - clear grid (button)
+//- clear grid (button)
 
 var clrButtonDiv = document.createElement('div');
 var clrButton = document.createElement('button');
@@ -95,9 +95,8 @@ parent.appendChild(clrButtonDiv);
 
 
 clrButton.addEventListener('click', function(event){
-	var rmElm = document.getElementsByClassName('newTableRow');
+	var rmElm = document.querySelectorAll('.tableCol');
 	for(var i=0; i<rmElm.length;i++){
-
 	rmElm[i].removeAttribute('style');
 }}, true);
 
@@ -135,7 +134,6 @@ for (var i = 0; i < palletes.length; i++) {
     colorString = currentColor;
 	})
 };
-
 
 
 for (var i = 0; i < colorTest.length; i++) {
