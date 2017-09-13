@@ -6,19 +6,20 @@ console.log('virgi is here');
 
 // --G var
 var draw = true;
+var currentColor = event.target.style.backgroundColor;
 
 // step one - Create the grid --- Can bind click function built into for loop
 function drawGrid(width, height, attributename, attribute){
 	var MainTableWrapper = document.createElement('div');
-	MainTableWrapper.addEventListener('mousedown', function(){
+	MainTableWrapper.addEventListener('mousedown', function(event){
 		draw = true;
 		var thisElem = event.target;
-		thisElem.style = 'background-color: black';
+	 	thisElem.style = currentColor;
+
 	});
-		MainTableWrapper.addEventListener('mouseup', function(){
+		MainTableWrapper.addEventListener('mouseup', function(event){
 		draw = false;
-		var thisElem = event.target;
-	 	thisElem.style = 'background-color: white';
+
 	});
 
 	MainTableWrapper.setAttribute('id', 'MainTableWrapper');
@@ -78,13 +79,13 @@ erButtonDiv.appendChild(eraseButton);
 parent.appendChild(erButtonDiv);
 
 // ERASE BTN
-eraseButton.addEventListener('click', function(event){
-	if(draw){
-	draw = false;
-	}else if(draw === false){
-		draw = true;
-	}
-}, true);
+// eraseButton.addEventListener('click', function(event){
+// 	if(draw){
+// 	draw = false;
+// 	}else if(draw === false){
+// 		draw = true;
+// 	}
+// }, true);
 
 // - clear grid (button)
 
@@ -131,33 +132,37 @@ clrButton.addEventListener('click', function(event){
 // step 8 - link colors to color grid
 
 var color = document.getElementsByClassName('colorTable');
-console.log(color);
 var colorArray = ['red', 'blue', 'green', 'black'];
 
-function addColors(colorName){
+function addColors(){
 	for (var i = 0; i < color.length; i++) {
-		console.log(color[i]);
-		//color[i].style = 'background-color: red';
 		color[i].style.backgroundColor = colorArray[i];
 	}
 };
 
-addColors(4);
-
-
-
-
-
-
+addColors();
 
 // step 10. link the color grid to mous click to write to the main grid
 
+var currentColor;
+
+function grabColors(){
+	for (var i = 0; i < color.length; i++) {
+		console.log(color[i]);
+		color[i].addEventListener('click', function(event){
+			currentColor = event.currentTarget.style.backgroundColor;
+			console.log(currentColor);
+
+	//MainTableWrapper = currentColor;
+}, true);
+
+	}
 
 
+};
 
 
-
-
+grabColors();
 
 
 
