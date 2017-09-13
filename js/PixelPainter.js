@@ -27,13 +27,14 @@ function drawGrid(width, height, attributename, attribute){
 	for(var i = 1; i< height; i++){
 		var newTableCol = document.createElement('div');
 		newTableCol.setAttribute('data', i );
-		newTableCol.setAttribute(attributename, attribute);
+		newTableCol.setAttribute('class', 'parentDiv');
 		MainTableWrapper.appendChild(newTableCol);
 
 		 for(var j = 1; j < width; j++){
 		 	var newTableRow = document.createElement('div');
 	 		newTableRow.setAttribute('data', j);
-	 		newTableRow.setAttribute('class', 'newTableRow');
+	 		newTableRow.setAttribute(attributename, attribute);
+	 		//newTableRow.setAttribute('background-color', 'green');
 	 		// newTableRow.addEventListener('mouseover', function(event){
 	 		// 	if(draw){
 	 		// 		var thisElem = event.target;
@@ -129,6 +130,19 @@ clrButton.addEventListener('click', function(event){
 
 // step 8 - link colors to color grid
 
+var color = document.getElementsByClassName('colorTable');
+console.log(color);
+var colorArray = ['red', 'blue', 'green', 'black'];
+
+function addColors(colorName){
+	for (var i = 0; i < color.length; i++) {
+		console.log(color[i]);
+		//color[i].style = 'background-color: red';
+		color[i].style.backgroundColor = colorArray[i];
+	}
+};
+
+addColors(4);
 
 
 
