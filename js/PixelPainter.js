@@ -10,14 +10,16 @@ var draw = true;
 // step one - Create the grid --- Can bind click function built into for loop
 function drawGrid(width, height, attributename, attribute){
 	var MainTableWrapper = document.createElement('div');
-	// MainTableWrapper.addEventListener('mousedown', function(){
-	// 	draw = true;
-	// 	console.log(draw);
-	// });
-	// 	MainTableWrapper.addEventListener('mouseup', function(){
-	// 	draw = false;
-	// 	console.log(draw);
-	// });
+	MainTableWrapper.addEventListener('mousedown', function(){
+		draw = true;
+		var thisElem = event.target;
+		thisElem.style = 'background-color: black';
+	});
+		MainTableWrapper.addEventListener('mouseup', function(){
+		draw = false;
+		var thisElem = event.target;
+	 	thisElem.style = 'background-color: white';
+	});
 
 	MainTableWrapper.setAttribute('id', 'MainTableWrapper');
 
@@ -32,23 +34,26 @@ function drawGrid(width, height, attributename, attribute){
 		 	var newTableRow = document.createElement('div');
 	 		newTableRow.setAttribute('data', j);
 	 		newTableRow.setAttribute('class', 'newTableRow');
-	 		newTableRow.addEventListener('mouseover', function(event){
-	 			if(draw){
-	 				var thisElem = event.target;
-					thisElem.style = 'background-color: black';
-	 			}else if(draw === false){
-	 				var thisElem = event.target;
-	 				thisElem.style = 'background-color: white';
-	 			}
-	 		});
-
+	 		// newTableRow.addEventListener('mouseover', function(event){
+	 		// 	if(draw){
+	 		// 		var thisElem = event.target;
+				// 	thisElem.style = 'background-color: black';
+	 		// 	}else
+	 		// 	 if(draw === false){
+	 		// 		var thisElem = event.target;
+	 		// 		thisElem.style = 'background-color: white';
+	 		// 	}
 	 		newTableCol.appendChild(newTableRow);
+	 		};
+
+
 
 
 		}
-	}
-	return MainTableWrapper;
-}
+		return MainTableWrapper;
+	};
+
+
 
 
 var newGrid = drawGrid(10,10, 'class', 'tableCol');
