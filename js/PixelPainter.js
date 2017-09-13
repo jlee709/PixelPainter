@@ -1,16 +1,12 @@
 // Justin and Virgi checks for Git and contributors
-
-console.log("im here");
-console.log('Justin Is here');
-console.log('virgi is here');
+console.log("MVP up / Needs styling ^^ ");
 
 // --G var
 var draw = true;
 var colorArray = ['red', 'blue', 'green', 'black'];
 var color = document.getElementsByClassName('colorTable');
-//var currentColor = event.target.style.backgroundColor;
 
-// step one - Create the grid --- Can bind click function built into for loop
+// Sets CreateGrid Function
 function drawGrid(width, height, attributename, attribute){
 	var MainTableWrapper = document.createElement('div');
 	MainTableWrapper.addEventListener('mousedown', function(event){
@@ -35,31 +31,19 @@ function drawGrid(width, height, attributename, attribute){
 		 	var newTableRow = document.createElement('div');
 	 		newTableRow.setAttribute('data', j);
 	 		newTableRow.setAttribute(attributename, attribute);
-	 		//newTableRow.setAttribute('background-color', 'green');
-	 		// newTableRow.addEventListener('mouseover', function(event){
-	 		// 	if(draw){
-	 		// 		var thisElem = event.target;
-				// 	thisElem.style = 'background-color: black';
-	 		// 	}else
-	 		// 	 if(draw === false){
-	 		// 		var thisElem = event.target;
-	 		// 		thisElem.style = 'background-color: white';
-	 		// 	}
 	 		newTableCol.appendChild(newTableRow);
 	 		}
 		}
 		return MainTableWrapper;
 	}
 
-
-
-
+// Draw Main Gid
 var newGrid = drawGrid(10,10, 'class', 'tableCol');
 
 var parent = document.getElementById('pixelPainter');
 		parent.appendChild(newGrid);
-// step 2 - create the color grid (without color)
 
+// screate the color grid (without color)
 var newColorGrid = drawGrid(3,3, 'class', 'colorTable');
 	var parent = document.getElementById('pixelPainter');
 	parent.appendChild(newColorGrid);
@@ -73,14 +57,12 @@ erButtonDiv.setAttribute('id', 'erButtonDiv');
 eraseButton.innerHTML = 'ERASE';
 erButtonDiv.appendChild(eraseButton);
 parent.appendChild(erButtonDiv);
-// ERASE BTN
+// ERASE BTN - Function
 	erButtonDiv.addEventListener('click',function(event){
 		colorString = 'white';
 	});
 
-
 //- clear grid (button)
-
 var clrButtonDiv = document.createElement('div');
 var clrButton = document.createElement('button');
 clrButton.setAttribute('id', 'clrButton');
@@ -89,30 +71,25 @@ clrButton.innerHTML = 'CLEAR';
 clrButtonDiv.appendChild(clrButton);
 parent.appendChild(clrButtonDiv);
 
-
+// Clear Button Functionality
 clrButton.addEventListener('click', function(event){
 	var rmElm = document.querySelectorAll('.tableCol');
 	for(var i=0; i<rmElm.length;i++){
-	rmElm[i].removeAttribute('style');
+		rmElm[i].removeAttribute('style');
 }}, true);
 
-
+// Populats color grid with colors
 function addColors(){
 	for (var i = 0; i < color.length; i++) {
 		color[i].style.backgroundColor = colorArray[i];
 	}
-}
+}	
+addColors(); 
 
-addColors();
-
-// step 10. link the color grid to mous click to write to the main grid
-//var currentColor = event.currentTarget.style.backgroundColor;
-
-
+// Handels selections color locale to but grabed and placed
 var colorTest = document.querySelectorAll('.tableCol');
 var palletes = document.querySelectorAll('.colorTable');
 var colorString;
-
 
 for (var i = 0; i < palletes.length; i++) {
 	palletes[i].addEventListener('click', function(event) {
