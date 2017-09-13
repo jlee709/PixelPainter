@@ -106,41 +106,11 @@ clrButton.addEventListener('click', function(event){
 
 
 
-// step 4 - make main grid clickable
-var palletes = document.getElementsByClassName('colorTable');
-for (var i = 0; i < palletes.length; i++) {
-palletes[i].addEventListener('click', function(event) {
-          var currentColor = event.currentTarget.style.backgroundColor;
-          //currentColorDiv.style.backgroundColor = currentColor;
-          //currentColorDisplayDiv.style.borderColor = currentColor;
-          console.log(currentColor);
-	})
-};
-
-
-
-
-
-
-
-
 // step 6 - add action fucntion to each grid Key
-
-
-
-
-
 
 // step 7 - action for erase button / clear grid
 
-
-
-
-
 // step 8 - link colors to color grid
-
-
-
 
 function addColors(){
 	for (var i = 0; i < color.length; i++) {
@@ -153,30 +123,26 @@ addColors();
 // step 10. link the color grid to mous click to write to the main grid
 //var currentColor = event.currentTarget.style.backgroundColor;
 
-var colorT = document.querySelectorAll('.colorTable');
+
 var colorTest = document.querySelectorAll('.tableCol');
+var palletes = document.querySelectorAll('.colorTable');
 var colorString;
-console.log(colorString, "colorString");
-
-	for (var i = 0; i < colorT.length; i++) {
-		colorT[i].addEventListener('click', function(event){
-			var currentColor = event.currentTarget.style.backgroundColor;
-			console.log(typeof currentColor);
-
-			colorString.push(currentColor);
-			console.log(currentColor, "this" + [i]);
-console.log("outside", currentColor);
-
-		});
 
 
-	for (var i = 0; i < colorTest.length; i++) {
-			colorTest[i].addEventListener('click', function(event){
-			console.log('tableCol')
+for (var i = 0; i < palletes.length; i++) {
+	palletes[i].addEventListener('click', function(event) {
+    var currentColor = event.currentTarget.style.backgroundColor;
+    colorString = currentColor;
+	})
+};
+
+
+
+for (var i = 0; i < colorTest.length; i++) {
+	colorTest[i].addEventListener('click', function(event){
 		this.style.backgroundColor = colorString;
-		});
-		}
-	};
+			})
+};
 
 
 
