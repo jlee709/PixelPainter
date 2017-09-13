@@ -1,4 +1,5 @@
 // Justin and Virgi checks for Git and contributors
+
 console.log("im here");
 console.log('Justin Is here');
 console.log('virgi is here');
@@ -66,7 +67,7 @@ var parent = document.getElementById('pixelPainter');
 		var parent = document.getElementById('pixelPainter');
 			parent.appendChild(newColorGrid);
 
-// step 3 - make Erase and Clear buttins
+//- make Erase and Clear buttins
 var erButtonDiv = document.createElement('div');
 var eraseButton = document.createElement('button');
 eraseButton.setAttribute('id', 'eraseButton');
@@ -74,6 +75,25 @@ erButtonDiv.setAttribute('id', 'erButtonDiv');
 eraseButton.innerHTML = 'ERASE';
 erButtonDiv.appendChild(eraseButton);
 parent.appendChild(erButtonDiv);
+
+
+// - clear grid (button)
+
+var clrButtonDiv = document.createElement('div');
+var clrButton = document.createElement('button');
+clrButton.setAttribute('id', 'clrButton');
+clrButtonDiv.setAttribute('id', 'clrButtonDiv');
+clrButton.innerHTML = 'CLEAR';
+clrButtonDiv.appendChild(clrButton);
+parent.appendChild(clrButtonDiv);
+
+
+clrButton.addEventListener('click', function(event){
+	var rmElm = document.getElementsByClassName('newTableRow');
+	for(var i=0; i<rmElm.length;i++){
+			
+	rmElm[i].removeAttribute('style');
+}}, true);
 
 
 
@@ -110,10 +130,6 @@ parent.appendChild(erButtonDiv);
 
 
 
-
-
-
-// step 9 - clear grid (button)
 
 
 
