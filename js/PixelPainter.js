@@ -4,32 +4,26 @@ console.log("im here");
 console.log('Justin Is here');
 console.log('virgi is here');
 
-// specs For Pixel Painter
+// --G var
 
-// When instatiated it appends a
-// new PixelPainter object to a HTML div
-// element with an id of pp-canvas.
-// Module or Classical OOP Patterns for this.
+var draw = false;
 
 
-// The height and width attributes set the size of the canvas.
-// must be a square
-
-// Do not edit the index.html file. You will generate all
-// of your html markup using the DOM API.
-
-
-// constraints --> can not manipulate html !!!!!
-
-
-
-// --! pseudo code for what needs to be completed !-- //
 
 
 
 // step one - Create the grid --- Can bind click function built into for loop
 function drawGrid(width, height, attributename, attribute){
 	var MainTableWrapper = document.createElement('div');
+	MainTableWrapper.addEventListener('mousedown', function(){
+		draw = true;
+		console.log(draw);
+	});
+	MainTableWrapper.addEventListener('mouseup', function(){
+		draw = false;
+		console.log(draw);
+	});
+
 	MainTableWrapper.setAttribute('id', 'MainTableWrapper');
 
 
@@ -43,14 +37,20 @@ function drawGrid(width, height, attributename, attribute){
 		 	var newTableRow = document.createElement('div');
 	 		newTableRow.setAttribute('data', j);
 	 		newTableRow.setAttribute('class', 'newTableRow');
+	 		newTableRow.addEventListener('mouseover', function(event){
+	 			if(draw){
+	 				var thisElem = event.target;
+					thisElem.style = 'background-color: black';
+	 			}
+	 		});
 	 		newTableRow.addEventListener('click', function(event){
-			var thisElem = event.target;
-			thisElem.style = 'background-color: black';
-	}, true);
+				var thisElem = event.target;
+				thisElem.style = 'background-color: black';
+			}, true);
 	 		newTableCol.appendChild(newTableRow);
 
 
-	  }
+	}
 }
 
   return MainTableWrapper;
@@ -76,10 +76,12 @@ eraseButton.innerHTML = 'ERASE';
 erButtonDiv.appendChild(eraseButton);
 parent.appendChild(erButtonDiv);
 
+
+
+// ERASE BTN 
 eraseButton.addEventListener('click', function(event){
-	var thisElem = event.target;
-	for (var i = 0; i < thisElem.length; i++) {
-		thisElem[i].style = 'background-color: white';
+	var thisElem = event.target;{
+		thisElem.style = 'background-color: white';
 	}
 
 
