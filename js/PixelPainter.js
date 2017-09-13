@@ -76,6 +76,23 @@ eraseButton.innerHTML = 'ERASE';
 erButtonDiv.appendChild(eraseButton);
 parent.appendChild(erButtonDiv);
 
+eraseButton.addEventListener('click', function(event){
+	var thisElem = event.target;
+	for (var i = 0; i < thisElem.length; i++) {
+		thisElem[i].style = 'background-color: white';
+	}
+
+
+
+	//var cellElem = document.getElementsByClassName('newTableRow');
+	//var styleAtt = cellElem.getAttribute('style');
+	//console.log(styleAtt);
+	// for (var i = 0; i < cellElem.length; i++) {
+	// 	while(styleAtt === true){
+	// 		cellElem[i].removeAttribute('style');
+	// 	}
+	// }
+}, true);
 
 // - clear grid (button)
 
@@ -91,7 +108,7 @@ parent.appendChild(clrButtonDiv);
 clrButton.addEventListener('click', function(event){
 	var rmElm = document.getElementsByClassName('newTableRow');
 	for(var i=0; i<rmElm.length;i++){
-			
+
 	rmElm[i].removeAttribute('style');
 }}, true);
 
