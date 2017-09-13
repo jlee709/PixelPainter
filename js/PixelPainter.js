@@ -5,19 +5,19 @@ console.log('Justin Is here');
 console.log('virgi is here');
 
 // --G var
-var draw = false;
+var draw = true;
 
 // step one - Create the grid --- Can bind click function built into for loop
 function drawGrid(width, height, attributename, attribute){
 	var MainTableWrapper = document.createElement('div');
-	MainTableWrapper.addEventListener('mousedown', function(){
-		draw = true;
-		console.log(draw);
-	});
-		MainTableWrapper.addEventListener('mouseup', function(){
-		draw = false;
-		console.log(draw);
-	});
+	// MainTableWrapper.addEventListener('mousedown', function(){
+	// 	draw = true;
+	// 	console.log(draw);
+	// });
+	// 	MainTableWrapper.addEventListener('mouseup', function(){
+	// 	draw = false;
+	// 	console.log(draw);
+	// });
 
 	MainTableWrapper.setAttribute('id', 'MainTableWrapper');
 
@@ -36,18 +36,20 @@ function drawGrid(width, height, attributename, attribute){
 	 			if(draw){
 	 				var thisElem = event.target;
 					thisElem.style = 'background-color: black';
+	 			}else if(draw === false){
+	 				var thisElem = event.target;
+	 				thisElem.style = 'background-color: white';
 	 			}
 	 		});
-	 		newTableRow.addEventListener('click', function(event){
-				var thisElem = event.target;
-				thisElem.style = 'background-color: black';
-			}, true);
+
 	 		newTableCol.appendChild(newTableRow);
 
 
+		}
 	}
-	} return MainTableWrapper;
+	return MainTableWrapper;
 }
+
 
 var newGrid = drawGrid(10,10, 'class', 'tableCol');
 
@@ -69,10 +71,12 @@ eraseButton.innerHTML = 'ERASE';
 erButtonDiv.appendChild(eraseButton);
 parent.appendChild(erButtonDiv);
 
-// ERASE BTN 
+// ERASE BTN
 eraseButton.addEventListener('click', function(event){
-	var thisElem = event.target;{
-		thisElem.style = 'background-color: white';
+	if(draw){
+	draw = false;
+	}else if(draw === false){
+		draw = true;
 	}
 }, true);
 
