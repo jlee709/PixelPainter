@@ -29,6 +29,7 @@ console.log('virgi is here');
 // step one - Create the grid --- Can bind click function built into for loop
 function drawGrid(width, height, attributename, attribute){
 	var MainTableWrapper = document.createElement('div');
+	MainTableWrapper.setAttribute('id', 'MainTableWrapper');
 
 
 	for(var i = 1; i< height; i++){
@@ -69,6 +70,8 @@ var parent = document.getElementById('pixelPainter');
 var erButtonDiv = document.createElement('div');
 var eraseButton = document.createElement('button');
 eraseButton.setAttribute('id', 'eraseButton');
+erButtonDiv.setAttribute('id', 'erButtonDiv');
+eraseButton.innerHTML = 'ERASE';
 erButtonDiv.appendChild(eraseButton);
 parent.appendChild(erButtonDiv);
 

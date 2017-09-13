@@ -13,9 +13,6 @@ div.newTableRow{
 	border: solid black 2px;
 }
 
-
-
-
 div.colorTable{
 	float:right;
 
@@ -23,4 +20,13 @@ div.colorTable{
 	width: 25px;
 }
 
-#eraseButton
+#eraseButton{
+	margin: top 10px;
+	bottom: 35%;
+	left: 35%;
+}
+
+#MainTableWrapper{
+	overflow: auto;
+	height: 270px;
+}
