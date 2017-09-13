@@ -2,6 +2,7 @@ h1 {
 	display: inline-flex;
 	float: : right;
 	margin-right: 300px;
+	
 }
 
 div.tableCol{
@@ -38,6 +39,7 @@ div.newTableRow{
 	margin: auto;
   width: 10%;
   padding: 10px;
+  background-color: green;
 }
 
 #MainTableWrapper{
