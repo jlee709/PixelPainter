@@ -5,12 +5,7 @@ console.log('Justin Is here');
 console.log('virgi is here');
 
 // --G var
-
 var draw = false;
-
-
-
-
 
 // step one - Create the grid --- Can bind click function built into for loop
 function drawGrid(width, height, attributename, attribute){
@@ -19,7 +14,7 @@ function drawGrid(width, height, attributename, attribute){
 		draw = true;
 		console.log(draw);
 	});
-	MainTableWrapper.addEventListener('mouseup', function(){
+		MainTableWrapper.addEventListener('mouseup', function(){
 		draw = false;
 		console.log(draw);
 	});
@@ -51,10 +46,7 @@ function drawGrid(width, height, attributename, attribute){
 
 
 	}
-}
-
-  return MainTableWrapper;
-
+	} return MainTableWrapper;
 }
 
 var newGrid = drawGrid(10,10, 'class', 'tableCol');
@@ -63,9 +55,10 @@ var parent = document.getElementById('pixelPainter');
 		parent.appendChild(newGrid);
 // step 2 - create the color grid (without color)
 
-	var newColorGrid = drawGrid(3,3, 'class', 'colorTable');
-		var parent = document.getElementById('pixelPainter');
-			parent.appendChild(newColorGrid);
+var newColorGrid = drawGrid(3,3, 'class', 'colorTable');
+	var parent = document.getElementById('pixelPainter');
+	parent.appendChild(newColorGrid);
+
 
 //- make Erase and Clear buttins
 var erButtonDiv = document.createElement('div');
@@ -76,24 +69,11 @@ eraseButton.innerHTML = 'ERASE';
 erButtonDiv.appendChild(eraseButton);
 parent.appendChild(erButtonDiv);
 
-
-
 // ERASE BTN 
 eraseButton.addEventListener('click', function(event){
 	var thisElem = event.target;{
 		thisElem.style = 'background-color: white';
 	}
-
-
-
-	//var cellElem = document.getElementsByClassName('newTableRow');
-	//var styleAtt = cellElem.getAttribute('style');
-	//console.log(styleAtt);
-	// for (var i = 0; i < cellElem.length; i++) {
-	// 	while(styleAtt === true){
-	// 		cellElem[i].removeAttribute('style');
-	// 	}
-	// }
 }, true);
 
 // - clear grid (button)
@@ -120,13 +100,6 @@ clrButton.addEventListener('click', function(event){
 
 
 // step 4 - make main grid clickable
-
-
-
-
-
-
-// step 5 - make color grid clickable
 
 
 
