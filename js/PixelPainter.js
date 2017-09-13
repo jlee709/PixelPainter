@@ -46,10 +46,10 @@ function drawGrid(width, height, attributename, attribute){
 	 		// 		thisElem.style = 'background-color: white';
 	 		// 	}
 	 		newTableCol.appendChild(newTableRow);
-	 		};
+	 		}
 		}
 		return MainTableWrapper;
-	};
+	}
 
 
 
@@ -73,15 +73,11 @@ erButtonDiv.setAttribute('id', 'erButtonDiv');
 eraseButton.innerHTML = 'ERASE';
 erButtonDiv.appendChild(eraseButton);
 parent.appendChild(erButtonDiv);
-
 // ERASE BTN
-eraseButton.addEventListener('click', function(event){
-	if(draw){
-	draw = false;
-	}else if(draw === false){
-		draw = true;
-	}
-}, true);
+	erButtonDiv.addEventListener('click',function(event){
+		colorString = 'white';
+	});
+
 
 //- clear grid (button)
 
@@ -101,21 +97,11 @@ clrButton.addEventListener('click', function(event){
 }}, true);
 
 
-
-
-
-
-// step 6 - add action fucntion to each grid Key
-
-// step 7 - action for erase button / clear grid
-
-// step 8 - link colors to color grid
-
 function addColors(){
 	for (var i = 0; i < color.length; i++) {
 		color[i].style.backgroundColor = colorArray[i];
 	}
-};
+}
 
 addColors();
 
@@ -132,15 +118,14 @@ for (var i = 0; i < palletes.length; i++) {
 	palletes[i].addEventListener('click', function(event) {
     var currentColor = event.currentTarget.style.backgroundColor;
     colorString = currentColor;
-	})
-};
-
+	});
+}
 
 for (var i = 0; i < colorTest.length; i++) {
 	colorTest[i].addEventListener('click', function(event){
 		this.style.backgroundColor = colorString;
-			})
-};
+			});
+}
 
 
 
